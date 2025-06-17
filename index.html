@@ -18,9 +18,9 @@
   </nav>
 
   <!-- Hero section -->
-  <div class="flex items-center justify-between">
+  <div class="flex flex-col lg:flex-row items-center justify-between">
     <!-- Left -->
-    <div class="w-2/5 h-[450px] bg-blue-100 flex items-center justify-center">
+    <div class="w-full lg:w-2/5 h-[450px] bg-blue-100 flex items-center justify-center">
       <div class="w-[95%] h-[90%] bg-black flex flex-col">
         <h1 class="text-white text-6xl font-bold text-center pt-6">TokyoAI
         </h1>
@@ -35,18 +35,18 @@
       </div>
     </div>        
     <!-- Right -->
-    <div class="w-3/5 h-[450px] bg-green-100 flex items-center justify-center">
+    <div class="w-full lg:w-3/5 h-[450px] bg-green-100 flex items-center justify-center">
       <div class="w-[95%] h-[90%] bg-black flex items-center justify-center">
-        <img src="images/placeholder.jpg" alt="Conference Pic" class="w-full h-full" />
+        <img src="images/talk-bg.png" alt="Conference Pic" class="w-full h-full object-cover" />
       </div>
     </div>   
   </div>
 
   <!-- Interest Groups + Events -->
   <div class="bg-red-100 p-4 min-h-screen">
-    <div class="flex w-full pt-6">
+    <div class="flex flex-col lg:flex-row w-full pt-6">
       <!-- Left  -->
-      <div class="bg-green-100 w-[55%] h-[100%] p-4 items-center justify-center">
+      <div class="bg-green-100 w-full lg:w-[55%] h-[100%] p-4 items-center justify-center">
         <p class="text-white font-semibold text-center text-4xl mb-4">
           Interest Groups
         </p>
@@ -111,7 +111,7 @@
 
       </div>
       <!-- Right -->
-      <div class="bg-blue-100 w-[45%] h-screen p-4 flex flex-col">
+      <div class="bg-blue-100 w-full lg:w-[45%] h-screen p-4 flex flex-col">
         <p class="text-white font-semibold text-center text-4xl mb-4">
           Event list
         </p>
@@ -136,16 +136,16 @@
         Numbers
       </h1>
     </div>
-    <div class="w-full flex">
-      <div class="w-1/3 bg-red-100 h-48 flex flex-col items-center justify-center">
+    <div class="flex flex-col lg:flex-row w-full flex">
+      <div class="w-full lg:w-1/3 bg-red-100 h-48 flex flex-col items-center justify-center">
         <h1 class="text-white text-6xl font-bold text-center pt-4">2,400</h1>
         <h2 class="text-white text-4xl font-bold text-center pt-4">Members</h2>
       </div>
-      <div class="w-1/3 bg-green-300 h-48 flex flex-col items-center justify-center">
+      <div class="w-full lg:w-1/3 bg-green-300 h-48 flex flex-col items-center justify-center">
         <h1 class="text-white text-6xl font-bold text-center pt-4">45</h1>
         <h2 class="text-white text-4xl font-bold text-center pt-4">Events</h2>
       </div>
-      <div class="w-1/3 bg-blue-300 h-48 flex flex-col items-center justify-center">
+      <div class="w-full lg:w-1/3 bg-blue-300 h-48 flex flex-col items-center justify-center">
         <h1 class="text-white text-6xl font-bold text-center pt-4">260</h1>
         <h2 class="text-white text-4xl font-bold text-center pt-4">Speakers</h2>
       </div>
@@ -159,14 +159,14 @@
           Network
         </h1>
       </div> 
-      <div class="bg-blue-100 flex flex-row p-6">
-        <div class="w-1/2 bg-green-300">
+      <div class="bg-blue-100 flex flex-col lg:flex-row  p-6">
+        <div class="w-full lg:w-1/2 bg-green-300">
           <div class="w-full bg-blue-300">
             <h1 class="text-white text-3xl font-bold text-center pt-6">
               Academia
             </h1>
           </div>
-          <div class="grid grid-cols-4 gap-4">
+          <div class="grid grid-cols-4 gap-4 p-4">
             <img src="images/uchicago-logo.png" alt="placeholder" class="w-40 h-40 object-contain"/>
             <img src="images/mit-logo.png" alt="placeholder" class="w-40 h-40 object-contain"/>
             <img src="images/ucl-logo.png" alt="placeholder" class="w-40 h-40 object-contain"/>
@@ -181,13 +181,13 @@
             <img src="images/uTokyo.png" alt="placeholder" class="w-40 h-40 object-contain"/>
           </div>
         </div>
-        <div class="w-1/2 bg-red-300">
+        <div class=" bg-red-300">
           <div class="w-full bg-orange-100">
             <h1 class="text-white text-3xl font-bold text-center pt-6">
               Businesses
             </h1>
           </div>
-          <div class="grid grid-cols-6 gap-4">
+          <div class="grid grid-cols-6 gap-4 p-4">
             <img src="images/databricks-logo.png" alt="placeholder" class="w-20 h-20 object-contain"/>
             <img src="images/softbank-logo.png" alt="placeholder" class="w-20 h-20 object-contain"/>
             <img src="images/deepmind-logo.png" alt="placeholder" class="w-20 h-20 object-contain"/>
