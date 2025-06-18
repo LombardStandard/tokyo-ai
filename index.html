@@ -4,6 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>TokyoAI</title>
+
+<style>
+  .scroll-wrapper {
+    display: flex;
+    width: max-content;
+    animation: scroll-left 30s linear infinite;
+    gap: 2rem;
+  }
+
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+</style>
+  
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100">
@@ -18,9 +37,9 @@
   </nav>
 
   <!-- Hero section -->
-  <div class="flex flex-col lg:flex-row items-center justify-between">
+  <div class="flex flex-col lg:flex-row items-center border-t border-white justify-between">
     <!-- Left -->
-    <div class="w-full lg:w-2/5 h-[450px] bg-blue-100 flex items-center justify-center">
+    <div class="w-full lg:w-2/5 h-[450px] bg-black flex items-center justify-center">
       <div class="w-[95%] h-[90%] bg-black flex flex-col">
         <h1 class="text-white text-6xl pl-5 font-bold pt-6">TokyoAI
         </h1>
@@ -35,7 +54,7 @@
       </div>
     </div>        
     <!-- Right -->
-    <div class="w-full lg:w-3/5 h-[450px] bg-green-100 flex items-center justify-center">
+    <div class="w-full lg:w-3/5 h-[450px] bg-black flex items-center justify-center">
       <div class="w-[95%] h-[90%] bg-black flex items-center justify-center">
         <img src="images/talk-bg.png" alt="Conference Pic" class="w-full h-full object-cover" />
       </div>
@@ -159,28 +178,47 @@
           Network
         </h1>
       </div> 
-      <div class="bg-blue-100 flex flex-col lg:flex-row  p-6">
-        <div class="w-full lg:w-1/2 bg-green-300">
-          <div class="w-full bg-blue-300">
-            <h1 class="text-white text-3xl font-bold text-center pt-6">
+      <div class="bg-blue-100 p-6">
+        <div class="w-full bg-green-300 py-6 overflow-hidden flex items-center">
+          <div class="z-10 px-6 min-w-[200px]  ">
+            <h1 class="text-white text-3xl font-bold">
               Academia
             </h1>
           </div>
-          <div class="grid grid-cols-4 gap-4 p-4">
-            <img src="images/uchicago-logo.png" alt="placeholder" class="w-40 h-40 object-contain"/>
-            <img src="images/mit-logo.png" alt="placeholder" class="w-40 h-40 object-contain"/>
-            <img src="images/ucl-logo.png" alt="placeholder" class="w-40 h-40 object-contain"/>
-            <img src="images/upenn-logo.png" alt="placeholder" class="w-40 h-40 object-contain"/>
-            <img src="images/oxford-logo.png" alt="placeholder" class="w-40 h-40 object-contain"/>
-            <img src="images/ucornell-logo.png" alt="placeholder" class="w-40 h-40 object-contain"/>
-            <img src="images/ukeio-logo.png" alt="placeholder" class="w-40 h-40 object-contain"/>
-            <img src="images/imperial-logo.png" alt="placeholder" class="w-40 h-40 object-contain"/>
-            <img src="images/uosaka-logo.png" alt="placeholder" class="w-40 h-40 object-contain"/>
-            <img src="images/stanford-logo.png" alt="placeholder" class="w-40 h-40 object-contain"/>
-            <img src="images/Tokyo-Institute-of-Technology-Logo.png" alt="placeholder" class="w-40 h-40 object-contain"/>
-            <img src="images/uTokyo.png" alt="placeholder" class="w-40 h-40 object-contain"/>
+          <div class="overflow-hidden w-full ">
+            <div class="scroll-wrapper ">
+                <img src="images/uchicago-logo.png" class="w-32 h-32 object-contain" />
+                <img src="images/mit-logo.png" class="w-32 h-32 object-contain" />
+                <img src="images/ucl-logo.png" class="w-32 h-32 object-contain" />
+                <img src="images/upenn-logo.png" class="w-32 h-32 object-contain" />
+                <img src="images/oxford-logo.png" class="w-32 h-32 object-contain" />
+                <img src="images/ucornell-logo.png" class="w-32 h-32 object-contain" />
+                <img src="images/ukeio-logo.png" class="w-32 h-32 object-contain" />
+                <img src="images/imperial-logo.png" class="w-32 h-32 object-contain" />
+                <img src="images/uosaka-logo.png" class="w-32 h-32 object-contain" />
+                <img src="images/stanford-logo.png" class="w-32 h-32 object-contain" />
+                <img src="images/Tokyo-Institute-of-Technology-Logo.png" class="w-32 h-32 object-contain" />
+                <img src="images/University_of_Tokyo-Logo.wine.png" class="w-32 h-32 object-contain" />
+                <img src="images/Boston-University-Emblem.png" class="w-32 h-32 object-contain" />
+              
+                <img src="images/uchicago-logo.png" class="w-32 h-32 object-contain" />
+                <img src="images/mit-logo.png" class="w-32 h-32 object-contain" />
+                <img src="images/ucl-logo.png" class="w-32 h-32 object-contain" />
+                <img src="images/upenn-logo.png" class="w-32 h-32 object-contain" />
+                <img src="images/oxford-logo.png" class="w-32 h-32 object-contain" />
+                <img src="images/ucornell-logo.png" class="w-32 h-32 object-contain" />
+                <img src="images/ukeio-logo.png" class="w-32 h-32 object-contain" />
+                <img src="images/imperial-logo.png" class="w-32 h-32 object-contain" />
+                <img src="images/uosaka-logo.png" class="w-32 h-32 object-contain" />
+                <img src="images/stanford-logo.png" class="w-32 h-32 object-contain" />
+                <img src="images/Tokyo-Institute-of-Technology-Logo.png" class="w-32 h-32 object-contain" />
+                <img src="images/University_of_Tokyo-Logo.wine.png" class="w-32 h-32 object-contain" />
+                <img src="images/Boston-University-Emblem.png" class="w-32 h-32 object-contain" />
+
+            </div>
           </div>
-        </div>
+</div>
+
         <div class=" bg-white">
           <div class="w-full bg-orange-100">
             <h1 class="text-white text-3xl font-bold text-center pt-6">
@@ -207,15 +245,15 @@
             <img src="images/intel-logo.png" alt="placeholder" class="w-20 h-20 object-contain"/>
             <img src="images/microsoft-logo.png" alt="placeholder" class="w-20 h-20 object-contain"/>
             <img src="images/liquid-bw-logo.png" alt="placeholder" class="w-20 h-20 object-contain"/>
-            <img src="images/apple-logo.png" alt="placeholder" class="w-20 h-20 object-contain"/>
+            <img src="images/applelogo.png" alt="placeholder" class="w-20 h-20 object-contain"/>
             <img src="images/indeed-logo.png" alt="placeholder" class="w-20 h-20 object-contain"/>
             <img src="images/oracle-logo.png" alt="placeholder" class="w-20 h-20 object-contain"/>
             <img src="images/mila-logo.png" alt="placeholder" class="w-20 h-20 object-contain"/>
             <img src="images/fast-retailing-logo.png" alt="placeholder" class="w-20 h-20 object-contain"/>
             <img src="images/riken-logo.png" alt="placeholder" class="w-20 h-20 object-contain"/>
-            <img src="images/wnb-logo.png" alt="placeholder" class="w-20 h-20 object-contain"/>
+            <img src="images/logo___Weights___Biases___black_and_gold__1_Logo.jpg" alt="placeholder" class="w-20 h-20 object-contain"/>
             <img src="images/palantir-logo.png" alt="placeholder" class="w-20 h-20 object-contain"/>
-            <img src="images/tenstorrent-logo.png" alt="placeholder" class="w-20 h-20 object-contain"/>
+            <img src="images/tenstorrent.png" alt="placeholder" class="w-20 h-20 object-contain"/>
           </div>
         </div>
     </div>
@@ -236,7 +274,7 @@
             </button>
           </div>
         </div>
-        <div class="bg-gray-100">Text</div>
+        <div class="bg-gray-100">hi</div>
         <div class="bg-green-100">
           <div class="text-white text-2xl font-semibold text-center pt-3 pb-3">
             Follow us
