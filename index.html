@@ -16,7 +16,7 @@
   }
 
   .scroll-left {
-    animation: scroll-left 30s linear infinite;
+    animation: scroll-left 35s linear infinite;
   }
 
   .scroll-right {
@@ -87,7 +87,7 @@
           <input
             type="email"
             placeholder="Enter your email"
-            class="w-[80%] px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            class="w-[80%] px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-white"
             required/>
           <button
             type="submit"
@@ -171,15 +171,16 @@
         </div>
       </div>
       <!-- Right -->
-      <div class="bg-grey-800 w-full md:w-2/5 xl:w-[45%] p-4 flex flex-col justify-start">
-        <p class="text-black font-semibold text-center text-4xl mb-4">
-          Upcoming Events
-        </p>
-        <p class="text-black text-center text-2xl mb-4">
-          Click on any event to register
-        </p>
-  
-        <div class="flex-grow overflow-hidden rounded-xl">
+      <div class="w-full md:w-2/5 xl:w-[45%] bg-grey-800 flex flex-col h-screen">
+        <div class="p-4">
+          <p class="text-black font-semibold text-center text-4xl mb-4">
+            Upcoming Events
+          </p>
+          <p class="text-black text-center text-2xl mb-4">
+            Click on any event to register
+          </p>
+        </div>
+        <div class="flex-grow p-4">
           <iframe 
             src="https://lu.ma/embed/calendar/cal-H6qTsxbF3YBEDle/events" 
             style="border: none; border-radius: 12px;" 
@@ -188,6 +189,7 @@
             scrolling="yes">
           </iframe>
         </div>
+        
       </div>
     </div>
   </div>
@@ -254,13 +256,11 @@
                 <img src="images/tokiot.png" class="w-32 h-32 object-contain" />
                 <img src="images/University_of_Tokyo-Logo.wine.png" class="w-32 h-32 object-contain" />
                 <img src="images/Boston-University-Emblem.png" class="w-32 h-32 object-contain" />
-
             </div>
           </div>
         </div>
 
         <div class="relative w-full bg-grey-300 py-6 flex items-center">
-          
           <div class="overflow-hidden w-full">
             <div class="scroll-wrapper scroll-right">
               <img src="images/databricks-logo.png" alt="placeholder" class="w-32 h-32 object-contain"/>
@@ -326,28 +326,59 @@
     </div>
   </div>
    
-  <!-- Footer (TODO)-->
+  <!-- Footer -->
   <footer class="bg-black pb-8">
     <div class="mx-auto max-w-7xl px-3 pt-5 pb-8 sm:pt-24 lg:px-5 lg:pt-10">
-      <div class="grid grid-cols-[3fr_1fr_1fr] gap-8">
-        <div class="bg-blue-100">
-          <div class="bg-black pb-5">
-            <h1 class="text-white text-3xl font-semibold text-center pt-3 pb-3">Subscribe to our updates</h1>
-            <h2 class="text-white text-1xl text-center pt-2"> Sign up with your email address to receive news and updates.</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-8">
+        <!-- Left -->
+        <div class="bg-black">
+          <div class="bg-black pl-5 pb-5">
+            <h1 class="text-white text-3xl font-semibold pt-3 pb-3">
+              Subscribe to our updates
+            </h1>
+            <h2 class="text-white text-1xl pt-2">
+              Sign up with your email address to receive news and updates.
+            </h2>
           </div>
-          <div class="bg-green-100 flex justify-center">
-            <button class="bg-black w-full text-white font-bold border border-white py-8 px-12 transition-colors duration-300 hover:bg-white hover:text-black">
-              Join our newsletter
+          <div class="">
+            <form class="w-[80%] flex flex-row gap-3 pl-5 pt-5">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-white"
+                required/>
+            <button
+              type="submit"
+              class="w-[20%] text-white px-2 py-3 rounded-lg bg-black font-bold border border-white transition-colors duration-300 hover:bg-white hover:text-black">
+                Sign Up
             </button>
+          </form>
           </div>
         </div>
-        <div class="bg-gray-100">hi</div>
-        <div class="bg-green-100">
-          <div class="text-white text-2xl font-semibold text-center pt-3 pb-3">
+
+        <!-- Right -->
+        <div class="bg-black">
+          <div class="text-white text-3xl font-semibold text-center pt-3 pb-3">
             Follow us
           </div>
-          <div>
-            
+          <div class="w-full py-8 px-6 flex flex-col items-center gap-4 sm:px-12 sm:gap-6 md:flex-row md:justify-center md:gap-8">
+            <a href="https://www.linkedin.com/company/tokyoai/">
+              <img src="images/linkedin.webp" alt="Linkedin" class="w-5 h-5"> 
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61557145073989">
+              <img src="images/facebook.svg" alt="Facebook" class="w-5 h-5">
+            </a>
+            <a href="https://twitter.com/tokyoaijp">
+              <img src="images/x.svg" alt="X" class="w-5 h-5 invert"> 
+            </a>
+            <a href="https://discord.gg/a7UUvZpvvj">
+              <img src="images/discord.svg" alt="Discord" class="w-5 h-5 invert">
+            </a>
+            <a href="mailto:info@tokyoai.jp">
+              <img src="images/gmail.svg" alt="Email" class="w-5 h-5 invert">
+            </a>
+          </div>
+          <div>  
           </div>
         </div>
       </div>
