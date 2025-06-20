@@ -7,43 +7,104 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
 <style>
-
-  .scroll-wrapper {
-    display: flex;
-    width: max-content;
-    animation: scroll-left 30s linear infinite;
-    gap: 2rem;
-  }
-
-  .scroll-left {
-    animation: scroll-left 35s linear infinite;
-  }
-
-  .scroll-right {
-    animation: scroll-right 60s linear infinite;
-  }
-
-  @keyframes scroll-left {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-
-  @keyframes scroll-right {
-  0% {
-    transform: translateX(-50%);
-  }
-  100% {
-    transform: translateX(0%);
-    }
-  }
-
+  
   body {
     font-family: 'Roboto', sans-serif;
   }
+
+  .scroller {
+      max-width: 80%;
+      margin: auto;
+    }
+
+    .scroller__inner {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 5rem;
+    }
+
+    .scroller[data-animated="true"] {
+      overflow: hidden;
+      -webkit-mask: linear-gradient(
+        90deg,
+        transparent,
+        white 10%,
+        white 90%,
+        transparent
+      );
+      mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+    }
+
+    .scroller[data-animated="true"] .scroller__inner {
+      width: max-content;
+      flex-wrap: nowrap;
+      animation: scroll var(--_animation-duration, 40s)
+        var(--_animation-direction, forwards) linear infinite;
+    }
+
+    .scroller[data-direction="right"] {
+      --_animation-direction: reverse;
+    }
+
+    .scroller[data-direction="left"] {
+      --_animation-direction: forwards;
+    }
+
+    .scroller[data-speed="fast"] {
+      --_animation-duration: 20s;
+    }
+
+    .scroller[data-speed="slow"] {
+      --_animation-duration: 60s;
+    }
+
+    @keyframes scroll {
+      to {
+        transform: translate(calc(-50% - 2.5rem));
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      .scroller {
+        max-width: 100%;
+      }
+    }
+
+    @media only screen and (max-width: 480px) {
+      .scroller {
+        width: 100%;
+        max-height: 400px;
+      }
+
+      .scroller__inner {
+        flex-direction: column;
+        gap: 4rem;
+      }
+
+      .scroller[data-animated="true"] .scroller__inner {
+        width: 100%;
+        animation: scroll var(--_animation-duration, 40s)
+          var(--_animation-direction, forwards) linear infinite;
+      }
+
+      .scroller[data-animated="true"] {
+        -webkit-mask: linear-gradient(
+          0deg,
+          transparent,
+          white 10%,
+          white 90%,
+          transparent
+        );
+        mask: linear-gradient(0deg, transparent, white 10%, white 90%, transparent);
+      }
+
+      @keyframes scroll {
+        to {
+          transform: translate(0, calc(-50% - 2rem));
+        }
+      }
+    }
 </style>
 
 
@@ -227,8 +288,8 @@
       <div class="bg-grey-100 p-6">
         <div class="relative w-full bg-grey-500 py-6 flex items-center">
           
-          <div class="overflow-hidden w-full ">
-            <div class="scroll-wrapper scroll-left ">
+          <div class="scroller" data-animated="true" data-direction="left" data-speed="normal">
+            <div class="scroller__inner">
                 <img src="images/uchicago-logo.png" class="w-32 h-32 object-contain" />
                 <img src="images/mit-logo.png" class="w-32 h-32 object-contain" />
                 <img src="images/ucl-logo.png" class="w-32 h-32 object-contain" />
@@ -261,8 +322,8 @@
         </div>
 
         <div class="relative w-full bg-grey-300 py-6 flex items-center">
-          <div class="overflow-hidden w-full">
-            <div class="scroll-wrapper scroll-right">
+          <div class="scroller" data-animated="true" data-direction="right" data-speed="slow">
+            <div class="scroller__inner">
               <img src="images/databricks-logo.png" alt="placeholder" class="w-32 h-32 object-contain"/>
               <img src="images/softbank-logo.png" alt="placeholder" class="w-32 h-32 object-contain"/>
               <img src="images/deepmind-logo.png" alt="placeholder" class="w-32 h-32 object-contain"/>
