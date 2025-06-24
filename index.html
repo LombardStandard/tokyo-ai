@@ -13,15 +13,82 @@
   }
 
   .scroller {
-      max-width: 80%;
-      margin: auto;
+    max-width: 80%;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .scroller__inner {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5rem;
+  }
+
+  .scroller[data-animated="true"] {
+    overflow: hidden;
+    -webkit-mask: linear-gradient(
+      90deg,
+      transparent,
+      white 10%,
+      white 90%,
+      transparent
+    );
+    mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+  }
+
+  .scroller[data-animated="true"] .scroller__inner {
+    width: max-content;
+    flex-wrap: nowrap;
+    animation: scroll var(--_animation-duration, 40s)
+      var(--_animation-direction, forwards) linear infinite;
+  }
+
+  .scroller[data-direction="right"] {
+    --_animation-direction: reverse;
+  }
+
+  .scroller[data-direction="left"] {
+    --_animation-direction: forwards;
+  }
+
+  .scroller[data-speed="fast"] {
+    --_animation-duration: 20s;
+  }
+
+  .scroller[data-speed="slow"] {
+    --_animation-duration: 60s;
+  }
+
+  @keyframes scroll {
+    to {
+      transform: translate(calc(-50% - 2.5rem));
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .scroller {
+      max-width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    .scroller {
+      width: 100%;
+      max-height: 400px;
     }
 
     .scroller__inner {
       display: flex;
+      flex-direction: row;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 5rem;
+      gap: 4rem;
+    }
+
+    .scroller[data-animated="true"] .scroller__inner {
+      width: max-content;
+      animation: scroll var(--_animation-duration, 40s)
+        var(--_animation-direction, forwards) linear infinite;
     }
 
     .scroller[data-animated="true"] {
@@ -36,43 +103,37 @@
       mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
     }
 
-    .scroller[data-animated="true"] .scroller__inner {
-      width: max-content;
-      flex-wrap: nowrap;
-      animation: scroll var(--_animation-duration, 40s)
-        var(--_animation-direction, forwards) linear infinite;
-    }
-
-    .scroller[data-direction="right"] {
-      --_animation-direction: reverse;
-    }
-
-    .scroller[data-direction="left"] {
-      --_animation-direction: forwards;
-    }
-
-    .scroller[data-speed="fast"] {
-      --_animation-duration: 20s;
-    }
-
-    .scroller[data-speed="slow"] {
-      --_animation-duration: 60s;
-    }
-
-    @keyframes scroll {
-      to {
-        transform: translate(calc(-50% - 2.5rem));
-      }
-    }
-
-    @media only screen and (max-width: 768px) {
-      .scroller {
-        max-width: 100%;
-      }
-    }
-
-    
+}
+  
 </style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const SPEED = 70;
+
+  document.querySelectorAll(".scroller[data-animated='true']").forEach(scroller => {
+    const inner = scroller.querySelector(".scroller__inner");
+
+    if (!scroller.hasAttribute("data-cloned")) {
+      const items = Array.from(inner.children);
+      items.forEach(item => {
+        const clone = item.cloneNode(true);
+        inner.appendChild(clone);
+      });
+      scroller.setAttribute("data-cloned", "true");
+    }
+
+    const originalWidth = inner.scrollWidth / 2;
+    const duration = originalWidth / SPEED;
+
+    scroller.style.setProperty("--_animation-duration", `${duration}s`);
+  });
+});
+
+</script>
+
+
+
 
 <script src="https://cdn.tailwindcss.com"></script>
 
@@ -265,20 +326,6 @@
                 <img src="images/tokiot.png" class="w-32 h-32 object-contain" />
                 <img src="images/University_of_Tokyo-Logo.wine.png" class="w-32 h-32 object-contain" />
                 <img src="images/Boston-University-Emblem.png" class="w-32 h-32 object-contain" />
-
-                <img src="images/uchicago-logo.png" class="w-32 h-32 object-contain" />
-                <img src="images/mit-logo.png" class="w-32 h-32 object-contain" />
-                <img src="images/ucl-logo.png" class="w-32 h-32 object-contain" />
-                <img src="images/upenn-logo.png" class="w-32 h-32 object-contain" />
-                <img src="images/oxford-logo.png" class="w-32 h-32 object-contain" />
-                <img src="images/ucornell-logo.png" class="w-32 h-32 object-contain" />
-                <img src="images/ukeio-logo.png" class="w-32 h-32 object-contain" />
-                <img src="images/imperial-logo.png" class="w-32 h-32 object-contain" />
-                <img src="images/uosaka-logo.png" class="w-32 h-32 object-contain" />
-                <img src="images/stanford-logo.png" class="w-32 h-32 object-contain" />
-                <img src="images/tokiot.png" class="w-32 h-32 object-contain" />
-                <img src="images/University_of_Tokyo-Logo.wine.png" class="w-32 h-32 object-contain" />
-                <img src="images/Boston-University-Emblem.png" class="w-32 h-32 object-contain" />
             </div>
           </div>
         </div>
@@ -315,34 +362,6 @@
               <img src="images/palantir-logo.png" alt="placeholder" class="w-32 h-32 object-contain"/>
               <img src="images/tenstorrent.png" alt="placeholder" class="w-32 h-32 object-contain"/>
 
-              <img src="images/databricks-logo.png" alt="placeholder" class="w-32 h-32 object-contain"/>
-              <img src="images/softbank-logo.png" alt="placeholder" class="w-32 h-32 object-contain"/>
-              <img src="images/deepmind-logo.png" alt="placeholder" class="w-32 h-32 object-contain"/>
-              <img src="images/cohere-logo.png" alt="placeholder" class="w-32 h-32 object-contain"/>
-              <img src="images/toshiba-logo.png" alt="placeholder" class="w-32 h-32 object-contain"/>
-              <img src="images/panasonic-logo.png" alt="placeholder" class="w-32 h-32 object-contain"/>
-              <img src="images/ibm-logo.png" alt="placeholder" class="w-32 h-32 object-contain"/>
-              <img src="images/sony-logo.png" alt="placeholder" class="w-32 h-32 object-contain"/>
-              <img src="images/woven-logo.png" alt="placeholder" class="w-32 h-32 object-contain"/>
-              <img src="images/mercari-logo.png" alt="placeholder" class="w-32 h-32 object-contain"/>
-              <img src="images/amd-logo.png" alt="placeholder" class="w-32 h-32 object-contain"/>
-              <img src="images/sambanova-logo.png" alt="placeholder" class="w-32 h-32 object-contain"/>
-              <img src="images/sakana-logo.png" alt="placeholder" class="w-32 h-32 object-contain"/>
-              <img src="images/kpmg-logo.png" alt="placeholder" class="w-32 h-32 object-contain"/>
-              <img src="images/nec-logo.png" alt="placeholder" class="w-32 h-32 object-contain"/>
-              <img src="images/stabilityai-logo.png" alt="placeholder" class="w-32 h-32 object-contain"/>
-              <img src="images/intel-logo.png" alt="placeholder" class="w-32 h-32 object-contain"/>
-              <img src="images/microsoft-logo.png" alt="placeholder" class="w-32 h-32 object-contain"/>
-              <img src="images/liquid-bw-logo.png" alt="placeholder" class="w-32 h-32 object-contain"/>
-              <img src="images/applelogo.png" alt="placeholder" class="w-32 h-32 object-contain"/>
-              <img src="images/indeed-logo.png" alt="placeholder" class="w-32 h-32 object-contain"/>
-              <img src="images/oracle-logo.png" alt="placeholder" class="w-32 h-32 object-contain"/>
-              <img src="images/mila-logo.png" alt="placeholder" class="w-32 h-32 object-contain"/>
-              <img src="images/fast-retailing-logo.png" alt="placeholder" class="w-32 h-32 object-contain"/>
-              <img src="images/riken-logo.png" alt="placeholder" class="w-32 h-32 object-contain"/>
-              <img src="images/logo___Weights___Biases___black_and_gold__1_Logo.jpg" alt="placeholder" class="w-32 h-32 object-contain"/>
-              <img src="images/palantir-logo.png" alt="placeholder" class="w-32 h-32 object-contain"/>
-              <img src="images/tenstorrent.png" alt="placeholder" class="w-32 h-32 object-contain"/>
             </div>
           </div>
         </div>
