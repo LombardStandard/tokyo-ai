@@ -23,6 +23,8 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 5rem;
+    will-change: transform;
+    transform: translateZ(0);
   }
 
   .scroller[data-animated="true"] {
@@ -132,11 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </script>
 
-
-
-
 <script src="https://cdn.tailwindcss.com"></script>
-
 
 </head>
 <body class="bg-gray-100">
@@ -169,7 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </p>
         <div class="">
           <h1 class="text-white pt-5 pl-5 text-3xl">Sign up to our newsletter</h1>
-          <form class="flex flex-row gap-3 w-full">
+          <form class="flex flex-row gap-3 pt-5 w-full">
             <input
               type="email"
               placeholder="Enter your email"
@@ -257,7 +255,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </div>
       <!-- Right -->
-      <div class="bg-grey-800 w-full md:w-2/5 xl:w-[45%] p-4 flex flex-col flex-shrink-0">
+      <div class="bg-grey-800 w-full md:w-2/5 xl:w-[45%] min-h-screen p-4 flex flex-col flex-shrink-0">
         <p class="text-black font-semibold text-center text-4xl mb-4">
           Upcoming Events
         </p>
@@ -265,7 +263,7 @@ document.addEventListener("DOMContentLoaded", () => {
           Click on any event to register
         </p>
   
-        <div class="flex-grow overflow-hidden rounded-xl">
+        <div class="flex-grow overflow-hidden rounded-xl h-screen">
           <iframe 
             src="https://lu.ma/embed/calendar/cal-H6qTsxbF3YBEDle/events" 
             style="border: none; border-radius: 12px;" 
@@ -314,7 +312,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="scroller" data-animated="true" data-direction="left" data-speed="normal">
             <div class="scroller__inner">
                 <img src="images/uchicago-logo.png" class="w-32 h-32 object-contain" />
-                <img src="images/MIT-Logo.png" class="w-32 h-32 object-contain" />
+                <img src="images/mit-logo.png" class="w-32 h-32 object-contain" />
                 <img src="images/ucl-logo.png" class="w-32 h-32 object-contain" />
                 <img src="images/upenn-logo.png" class="w-32 h-32 object-contain" />
                 <img src="images/oxford-logo.png" class="w-32 h-32 object-contain" />
@@ -359,7 +357,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <img src="images/fast-retailing-logo.png" alt="placeholder" class="w-32 h-32 object-contain"/>
               <img src="images/riken-logo.png" alt="placeholder" class="w-32 h-32 object-contain"/>
               <img src="images/logo___Weights___Biases___black_and_gold__1_Logo.jpg" alt="placeholder" class="w-32 h-32 object-contain"/>
-              <img src="images/Palantir-Logo.png" alt="placeholder" class="w-32 h-32 object-contain"/>
+              <img src="images/palantir-logo.png" alt="placeholder" class="w-32 h-32 object-contain"/>
               <img src="images/tenstorrent.png" alt="placeholder" class="w-32 h-32 object-contain"/>
 
             </div>
